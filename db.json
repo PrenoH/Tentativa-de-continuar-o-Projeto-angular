@@ -1,0 +1,7 @@
+{
+    "tarefas": [
+      { "id": 1, "produto": "Leite", "quantidade": 2, "comprado": false },
+      { "id": 2, "produto": "Cerveja", "quantidade": 12, "comprado": true }
+    ]
+  }
+  

@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Lista de Compras</h1>
+  <h1>Lista de Tarefas</h1>
+
+  <input [(ngModel)]="novaTarefa" placeholder="Nova tarefa">
+  <button (click)="adicionarTarefa()">Adicionar</button>
+
+  <ul>
+    <li *ngFor="let tarefa of tarefas">
+      <input type="checkbox" [checked]="tarefa.included" (change)="atualizarStatus(tarefa.id, !tarefa.included)">
+      {{ tarefa.descricao }}
+      <button (click)="excluirTarefa(tarefa.id)">Excluir</button>
+    </li>
+  </ul>
+</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Comprado</th>
+        <th>Produto</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td><input type="checkbox" [(ngModel)]="item.comprado"></td>
+        <td [class.comprado]="item.comprado">{{ item.produto }}</td>
+        <td>{{ item.quantidade }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Formulário para Adicionar Novos Itens -->
+  <div class="form">
+    <input type="text" [(ngModel)]="novoProduto" placeholder="Produto">
+    <input type="number" [(ngModel)]="novaQuantidade" placeholder="Quantidade">
+    <button (click)="adicionarItem()">Adicionar Item</button>
+  </div>
+
